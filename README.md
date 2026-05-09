@@ -32,7 +32,7 @@ The output uses the **GitHub Dark Minimalist** design system: dark background (`
 | `examples/08-reports/` | Weekly status, incident timeline |
 | `examples/09-editors/` | Triage board, feature flag editor, prompt tuner |
 
-Open `index.html` in a browser to browse them all.
+Open any file in `examples/` in a browser to explore the references.
 
 ## Skill structure
 
