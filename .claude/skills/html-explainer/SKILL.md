@@ -9,14 +9,19 @@ When producing output that has meaningful structure -- comparisons, phases, time
 
 Your job is to:
 1. Identify which structural pattern fits the request
-2. Build a complete self-contained HTML using the closest example file as reference
-3. Write the file to disk and tell the user where it is
+2. Build a complete self-contained HTML using the skill references as the primary guide
+3. Use a matching example HTML file only when it is available in the current environment
+4. Write the file to disk and tell the user where it is
 
 ---
 
 ## Choosing the right pattern
 
-Match the request to a structural pattern. Read the closest example HTML file before writing the new page. The examples are the source of truth for visual style, spacing, typography, color palette, and interaction treatment.
+Match the request to a structural pattern. Read `references/pattern-catalog.md` before writing the page. That file is the primary routing and structure reference for all patterns.
+
+For editor-style patterns, also read `references/editor-templates.md`. It contains the compact interaction and export rules for those templates.
+
+If the current environment includes an `examples/` directory for this skill, open the closest matching example HTML file after reading the relevant reference files. Treat examples as optional visual companions, not as the only source of instructions.
 
 | Request type | Pattern |
 |---|---|
@@ -30,6 +35,7 @@ Match the request to a structural pattern. Read the closest example HTML file be
 | Slide presentation | **Slide deck** (scroll-snap, arrow-key nav) |
 | Design tokens, component states | **Design system / component sheet** |
 | Interactive prototype, animation tuning | **Prototype / sandbox** |
+| SVG illustrations, iconography, visual figure sheets | **SVG figure sheet** |
 | Process flow, deploy pipeline | **Flowchart** (SVG, clickable nodes) |
 | Drag/organize/prioritize items | **Triage editor** (with export button) |
 | Toggle flags or config | **Flag/config editor** |
@@ -37,7 +43,7 @@ Match the request to a structural pattern. Read the closest example HTML file be
 
 When the request doesn't match cleanly, default to the **Feature explainer** pattern -- it handles most documentation well.
 
-**Example file locations** (relative to this skill's install dir):
+**Optional example file locations** (only if an `examples/` directory is available in the current environment):
 | Category | Path |
 |---|---|
 | Exploration / planning | `examples/01-exploration/` |
@@ -88,7 +94,7 @@ document.addEventListener('keydown', e => {
 ```
 Use `scroll-snap-type: y mandatory` on `body`, `scroll-snap-align: start` on each `.slide`.
 
-**Editors with export** -- always end with a button that serializes the current state to text the user can paste or commit. The export closes the loop between the HTML artifact and the next step in the user's workflow.
+**Editors with export** -- always end with a button that serializes the current state to text the user can paste or commit. The export closes the loop between the HTML artifact and the next step in the user's workflow. Read `references/editor-templates.md` when the chosen pattern is a triage board, feature flag editor, or prompt tuner.
 
 **Collapsible sections** — for explainers with many steps:
 ```html
@@ -105,10 +111,12 @@ Style `summary` with `cursor: pointer`, `padding: 0.5rem 0`, and a marker indica
 
 1. Read the user's request carefully — identify the content type and the information they want communicated.
 2. Choose the pattern from the table above.
-3. Read the closest matching example file from `examples/<category>/<file>.html` and use it as the visual and structural starting point.
-4. Write the complete HTML to a file named descriptively (e.g., `feature-auth-explainer.html`, `week-23-status.html`, `refactor-plan.html`). Save it in the project root or wherever makes sense for the context.
-5. Open it in the browser if possible: `xdg-open <filename>.html`
-6. Tell the user the filename and what pattern you used.
+3. Read `references/pattern-catalog.md` for the selected pattern.
+4. If the pattern is an editor, read `references/editor-templates.md` too.
+5. If an `examples/` directory is available, open the closest matching example HTML file and borrow its visual treatment.
+6. Write the complete HTML to a file named descriptively (e.g., `feature-auth-explainer.html`, `week-23-status.html`, `refactor-plan.html`). Save it in the project root or wherever makes sense for the context.
+7. Open it in the browser if possible: `xdg-open <filename>.html`
+8. Tell the user the filename and what pattern you used.
 
 ---
 

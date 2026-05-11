@@ -1,6 +1,10 @@
 # Pattern Catalog
 
-20 structural patterns for HTML output. Each entry lists the layout, key HTML elements, and which example file to read for reference.
+15 structural patterns for HTML output. This is the primary reference for choosing a pattern and shaping the page structure.
+
+Read this file after selecting a pattern in `SKILL.md`.
+
+If the current environment also includes an `examples/` directory for this skill, you may open the matching HTML example after reading the relevant section here.
 
 ---
 
@@ -20,7 +24,7 @@ optional: verdict or recommendation row
 
 Style panels and recommended states using the same palette, border weight, radius, and spacing as the closest comparison example.
 
-**Reference:** `01-exploration-code-approaches.html`, `02-exploration-visual-designs.html`
+**Optional examples if available locally:** `01-exploration-code-approaches.html`, `02-exploration-visual-designs.html`
 
 ---
 
@@ -44,7 +48,7 @@ jump links to each file or section
 - Annotation bubbles: `position: absolute; right: -16px;` or inline after the block
 - Severity tags: pill badges using the status colors already present in the selected example.
 
-**Reference:** `03-code-review-pr.html`, `17-pr-writeup.html`
+**Optional examples if available locally:** `03-code-review-pr.html`, `17-pr-writeup.html`
 
 ---
 
@@ -66,7 +70,7 @@ Use `<svg>` with `viewBox`, draw rectangles and paths. Use the selected example'
 
 Clickable nodes: `cursor: pointer` on `<g>` elements with JS to show a detail panel.
 
-**Reference:** `04-code-understanding.html`, `13-flowchart-diagram.html`
+**Optional examples if available locally:** `04-code-understanding.html`, `13-flowchart-diagram.html`
 
 ---
 
@@ -101,7 +105,7 @@ Collapsible:
 </details>
 ```
 
-**Reference:** `14-research-feature-explainer.html`, `15-research-concept-explainer.html`
+**Optional examples if available locally:** `14-research-feature-explainer.html`, `15-research-concept-explainer.html`
 
 ---
 
@@ -123,7 +127,7 @@ Phases: numbered cards with a connecting line. Highlight the active phase using 
 
 Risk table: rows colored by severity using background tints.
 
-**Reference:** `16-implementation-plan.html`
+**Optional example if available locally:** `16-implementation-plan.html`
 
 ---
 
@@ -144,7 +148,7 @@ next week / upcoming
 
 Status badges: small pill elements. Use the selected example's existing done, blocked, and in-progress treatment.
 
-**Reference:** `11-status-report.html`
+**Optional example if available locally:** `11-status-report.html`
 
 ---
 
@@ -164,7 +168,7 @@ follow-up checklist (checkboxes, owners, due dates)
 
 Timeline: vertical line container with each event using a `::before` dot. Use the selected example's native border and accent styling.
 
-**Reference:** `12-incident-report.html`
+**Optional example if available locally:** `12-incident-report.html`
 
 ---
 
@@ -198,7 +202,7 @@ document.addEventListener('keydown', e => {
 });
 ```
 
-**Reference:** `09-slide-deck.html`
+**Optional example if available locally:** `09-slide-deck.html`
 
 ---
 
@@ -216,7 +220,7 @@ spacing/radius tokens
 
 Swatches: compact color blocks with the border weight and radius from the selected example.
 
-**Reference:** `05-design-system.html`, `06-component-variants.html`
+**Optional examples if available locally:** `05-design-system.html`, `06-component-variants.html`
 
 ---
 
@@ -233,7 +237,7 @@ code output: the CSS/JS that reproduces what's shown
 
 Live controls update CSS custom properties via JS: `el.style.setProperty('--duration', val + 'ms')`.
 
-**Reference:** `07-prototype-animation.html`, `08-prototype-interaction.html`
+**Optional examples if available locally:** `07-prototype-animation.html`, `08-prototype-interaction.html`
 
 ---
 
@@ -248,7 +252,7 @@ grid of SVG figures
 optional: copy button that grabs the SVG source
 ```
 
-**Reference:** `10-svg-illustrations.html`
+**Optional example if available locally:** `10-svg-illustrations.html`
 
 ---
 
@@ -274,13 +278,15 @@ Arrowhead marker:
 </defs>
 ```
 
-**Reference:** `13-flowchart-diagram.html`
+**Optional example if available locally:** `13-flowchart-diagram.html`
 
 ---
 
 ## 13. Triage / prioritization editor
 
 **When:** Sorting tickets, ranking items, dragging tasks across columns.
+
+Read `references/editor-templates.md` for the interaction model, export behavior, and shared editor conventions before using this template.
 
 **Structure:**
 ```
@@ -290,13 +296,15 @@ draggable card items in each column
 export button: serializes all columns to markdown or JSON
 ```
 
-**Reference:** `18-editor-triage-board.html`
+**Optional example if available locally:** `18-editor-triage-board.html`
 
 ---
 
 ## 14. Feature flag / config editor
 
 **When:** Toggling feature flags, reviewing config diffs, managing settings.
+
+Read `references/editor-templates.md` for the interaction model, export behavior, and shared editor conventions before using this template.
 
 **Structure:**
 ```
@@ -308,13 +316,15 @@ export / copy diff: shows only changed values
 
 Follow the toggle styling from `19-editor-feature-flags.html` unless the request needs a different control.
 
-**Reference:** `19-editor-feature-flags.html`
+**Optional example if available locally:** `19-editor-feature-flags.html`
 
 ---
 
 ## 15. Prompt / template tuner
 
 **When:** Editing a prompt template with variable slots, previewing with sample inputs.
+
+Read `references/editor-templates.md` for the interaction model, export behavior, and shared editor conventions before using this template.
 
 **Structure:**
 ```
@@ -324,7 +334,7 @@ right panel: N sample inputs that re-render as the template is edited
 
 Highlight `{{variable}}` slots using the prompt tuner example's native accent treatment.
 
-**Reference:** `20-editor-prompt-tuner.html`
+**Optional example if available locally:** `20-editor-prompt-tuner.html`
 
 ---
 
