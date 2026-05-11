@@ -43,45 +43,13 @@ Choose the structure that best matches the request:
 
 Default to **Feature explainer** when the request is documentation-like or ambiguous.
 
-## Design system
+## Visual reference
 
-Use a GitHub Dark Minimalist style.
+Use the closest matching file in `examples/` as the visual and structural reference when this repository is available locally.
 
-Always declare these tokens in `:root`:
-
-```css
-:root {
-  --canvas: #0d1117;
-  --surface: #161b22;
-  --fg: #e6edf3;
-  --fg-muted: #7d8590;
-  --accent: #2f81f7;
-  --border: #30363d;
-  --border-hover: #8b949e;
-  --btn-bg: #21262d;
-  --btn-hover: #30363d;
-  --success: #238636;
-  --danger: #f85149;
-  --mono: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
-  --sans: "Inter", system-ui, sans-serif;
-}
-```
-
-Base page rules:
-
-```css
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: var(--mono);
-  background: var(--canvas);
-  color: var(--fg);
-  line-height: 1.6;
-  margin: 0 auto;
-  padding: 2rem;
-  max-width: 800px;
-  -webkit-font-smoothing: antialiased;
-}
-```
+- Preserve the example's native palette, typography, spacing, borders, radius, and layout density.
+- Adapt the structure and content to the request.
+- Do not convert the page to a separate global design system.
 
 ## Required HTML rules
 
@@ -90,16 +58,12 @@ body {
 - Use a specific `<title>` based on the real content
 - Keep CSS and JS inline; no external dependencies
 - Use inline SVG if you need icons or diagrams
-- Use `var(--sans)` only for buttons, labels, and controls
-- Use `var(--mono)` for body text, headings, and code
+- Use system font stacks; do not load Google Fonts
 
 ## Common styling rules
 
-- `h2`: bottom border, spacing above, clear section separation
-- Tables: full width, collapsed borders, subtle row striping
-- Code blocks: `var(--surface)` background and `1px solid var(--border)`
-- Callouts: surface background with left accent border
-- Buttons: neutral dark background, clear hover state, 6px radius
+- Follow the selected example's treatment for headings, tables, code blocks, callouts, and buttons.
+- Keep responsive behavior from the example when it applies.
 
 ## Interactivity
 
@@ -123,7 +87,7 @@ If the page needs interactivity:
 
 - No placeholder text
 - No external requests
-- No hardcoded hex colors outside `:root`
+- Visual style should follow the selected example instead of a separate theme
 - Content should be useful without the original chat context
 - Interactive elements should have visible focus states
 
@@ -131,7 +95,6 @@ If the page needs interactivity:
 
 If this repository is available locally, you may read these for deeper reference:
 
-- `.claude/skills/html-explainer/references/design-tokens.md`
 - `.claude/skills/html-explainer/references/pattern-catalog.md`
 - `examples/`
 

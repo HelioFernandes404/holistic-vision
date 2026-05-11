@@ -16,11 +16,9 @@ grid of panels (2–4 columns)
 optional: verdict or recommendation row
 ```
 
-**Key CSS:** `display: grid; grid-template-columns: repeat(N, 1fr); gap: 1.5rem;`
+**Key CSS:** use a responsive grid with one panel per option.
 
-Each panel: `background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem;`
-
-Highlight the recommended option: `border-color: var(--accent);`
+Style panels and recommended states using the same palette, border weight, radius, and spacing as the closest comparison example.
 
 **Reference:** `01-exploration-code-approaches.html`, `02-exploration-visual-designs.html`
 
@@ -44,7 +42,7 @@ jump links to each file or section
 **Key elements:**
 - `<span class="add">` / `<span class="del">` with green/red background tint
 - Annotation bubbles: `position: absolute; right: -16px;` or inline after the block
-- Severity tags: pill badges with `--danger`, `--success`, `--fg-muted`
+- Severity tags: pill badges using the status colors already present in the selected example.
 
 **Reference:** `03-code-review-pr.html`, `17-pr-writeup.html`
 
@@ -64,7 +62,7 @@ inline SVG diagram
 sidebar or below: node descriptions
 ```
 
-Use `<svg>` with `viewBox`, draw rectangles and paths. Use `var(--accent)` for the hot path, `var(--border)` for normal edges.
+Use `<svg>` with `viewBox`, draw rectangles and paths. Use the selected example's accent color for the hot path and neutral color for normal edges.
 
 Clickable nodes: `cursor: pointer` on `<g>` elements with JS to show a detail panel.
 
@@ -121,7 +119,7 @@ risk table
 open questions or next steps
 ```
 
-Phases: numbered cards with a connecting line. Active phase: `border-color: var(--accent)`.
+Phases: numbered cards with a connecting line. Highlight the active phase using the selected example's accent treatment.
 
 Risk table: rows colored by severity using background tints.
 
@@ -144,7 +142,7 @@ mini chart (bar or sparkline, inline SVG)
 next week / upcoming
 ```
 
-Status badges: small pill elements. Use `--success` tint for done, `--danger` tint for blocked, `--fg-muted` for in-progress.
+Status badges: small pill elements. Use the selected example's existing done, blocked, and in-progress treatment.
 
 **Reference:** `11-status-report.html`
 
@@ -164,7 +162,7 @@ root cause section
 follow-up checklist (checkboxes, owners, due dates)
 ```
 
-Timeline: `position: relative; border-left: 2px solid var(--border)` on container, each event `::before` as a dot.
+Timeline: vertical line container with each event using a `::before` dot. Use the selected example's native border and accent styling.
 
 **Reference:** `12-incident-report.html`
 
@@ -216,7 +214,7 @@ component examples: buttons (all states), inputs, badges, tables
 spacing/radius tokens
 ```
 
-Swatches: `width: 3rem; height: 3rem; border-radius: 6px; border: 1px solid var(--border)`
+Swatches: compact color blocks with the border weight and radius from the selected example.
 
 **Reference:** `05-design-system.html`, `06-component-variants.html`
 
@@ -271,7 +269,7 @@ Arrowhead marker:
 ```svg
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="var(--border-hover)"/>
+    <polygon points="0 0, 10 3.5, 0 7" fill="currentColor"/>
   </marker>
 </defs>
 ```
@@ -308,13 +306,7 @@ grouped list of flags/settings
 export / copy diff: shows only changed values
 ```
 
-Toggle switch CSS (pure CSS, no JS needed for basic):
-```css
-.toggle { width: 36px; height: 20px; background: var(--btn-bg); border-radius: 10px; cursor: pointer; }
-.toggle.on { background: var(--success); }
-.toggle .knob { width: 16px; height: 16px; background: white; border-radius: 50%; transition: transform 150ms; }
-.toggle.on .knob { transform: translateX(16px); }
-```
+Follow the toggle styling from `19-editor-feature-flags.html` unless the request needs a different control.
 
 **Reference:** `19-editor-feature-flags.html`
 
@@ -330,7 +322,7 @@ left panel: editable template, variable slots highlighted
 right panel: N sample inputs that re-render as the template is edited
 ```
 
-Highlight `{{variable}}` slots with `color: var(--accent); background: rgba(47,129,247,0.1)`.
+Highlight `{{variable}}` slots using the prompt tuner example's native accent treatment.
 
 **Reference:** `20-editor-prompt-tuner.html`
 

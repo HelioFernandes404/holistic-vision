@@ -36,7 +36,7 @@ This repository has two separate workflows:
 
 When the request has real structure, `html-explainer` produces a single browser-ready `.html` file instead of a markdown response.
 
-The output uses the **GitHub Dark Minimalist** design system: dark background (`#0d1117`), JetBrains Mono body, GitHub-style tokens, no external dependencies.
+The output follows the native style of the closest reference file in `examples/`: warm editorial palette, system fonts, inline CSS/JS, and no external dependencies.
 
 ## Install the skill
 
@@ -149,7 +149,6 @@ Open any file in `examples/` in a browser to explore the references.
 ~/.claude/skills/html-explainer/
 ├── SKILL.md
 ├── references/
-│   ├── design-tokens.md
 │   └── pattern-catalog.md
 └── examples/
     └── 01-exploration/ … 09-editors/
